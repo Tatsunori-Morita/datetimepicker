@@ -96,9 +96,9 @@ public class Common {
 	}
 
   @NonNull
-  public static DialogInterface.OnShowListener openYearDialog(final AlertDialog dialog, final boolean canOpenYearDialog) {
+  public static DialogInterface.OnShowListener openYearDialog(final AlertDialog dialog, final boolean shouldOpenYearDialog) {
     return dialogInterface -> {
-      if (canOpenYearDialog && dialog instanceof DatePickerDialog datePickerDialog) {
+      if (shouldOpenYearDialog && dialog instanceof DatePickerDialog datePickerDialog) {
         DatePicker datePicker = datePickerDialog.getDatePicker();
 
         int yearId = Resources.getSystem().getIdentifier("date_picker_header_year", "id", "android");

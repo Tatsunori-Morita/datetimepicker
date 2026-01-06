@@ -537,7 +537,7 @@ List of possible values:
 
 #### `startOnYearSelection` (`optional`, `Android only`)
 
-If true, the date picker will open with the year selector first.
+If true, the date picker will open with the year selector first. Not applicable for material picker.
 
 ```js
 <RNDateTimePicker startOnYearSelection={true} />

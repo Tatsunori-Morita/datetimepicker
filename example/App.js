@@ -105,7 +105,6 @@ export const App = () => {
   const [display, setDisplay] = useState(DISPLAY_VALUES[0]);
   const [interval, setMinInterval] = useState(1);
   const [neutralButtonLabel, setNeutralButtonLabel] = useState(undefined);
-  const [disabled, setDisabled] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [startOnYearSelection, setStartOnYearSelection] = useState(false);
   const [minimumDate, setMinimumDate] = useState();
@@ -372,14 +371,7 @@ export const App = () => {
               placeholder="accentColor"
             />
           </View>
-          <View style={styles.header}>
-            <ThemedText style={styles.textLabel}>
-              disabled (iOS only)
-            </ThemedText>
-            <View style={{flex: 1, alignItems: 'flex-start'}}>
-              <Switch value={disabled} onValueChange={setDisabled} />
-            </View>
-          </View>
+
           <View style={styles.header}>
             <ThemedText style={styles.textLabel}>
               fullscreen (android only)
@@ -489,7 +481,7 @@ export const App = () => {
                   setMinimumDate(undefined);
                   setMaximumDate(undefined);
                   setShow(false);
-                } else {  
+                } else {
                   setMinimumDate(new Date('2025-09-05'));
                   setMaximumDate(new Date('2025-09-01'));
                   setShow(true);
@@ -523,7 +515,6 @@ export const App = () => {
                 accentColor={accentColor || undefined}
                 neutralButton={{label: neutralButtonLabel}}
                 negativeButton={{label: 'Cancel', textColor: 'red'}}
-                disabled={disabled}
                 firstDayOfWeek={firstDayOfWeek}
                 title={isMaterialDesign ? title : undefined}
                 initialInputMode={isMaterialDesign ? inputMode : undefined}
